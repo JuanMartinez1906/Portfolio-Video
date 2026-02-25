@@ -31,11 +31,9 @@ export async function GET() {
     if (!rss.ok) return NextResponse.json({ videos: [] });
 
     const xml = await rss.text();
-    const videoIds = [
-      ...xml.matchAll(/<yt:videoId>([^<]+)<\/yt:videoId>/g),
-    ]
-      .map((m) => m[1])
-      .slice(0, 8);
+    const videoIds = Array.from(
+      xml.matchAll(/<yt:videoId>([^<]+)<\/yt:videoId>/g)
+    ).map((m) => m[1]).slice(0, 8);
 
     const videos = videoIds.map((id) => ({
       id,
