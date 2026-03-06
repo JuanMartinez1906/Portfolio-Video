@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/sections/Hero";
 import Services from "@/sections/Services";
 import Portfolio from "@/sections/Portfolio";
-import Pricing from "@/sections/Pricing";
 import Stats from "@/sections/Stats";
 import About from "@/sections/About";
 import SocialProof from "@/sections/SocialProof";
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <Services />
       <Portfolio />
-      <Pricing />
       <Stats />
       <About />
       <SocialProof />
